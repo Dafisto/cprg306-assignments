@@ -72,7 +72,7 @@ export default function ItemList(){
     quantity: 4,
     category: "household",
     };
-          
+
     return(
     <main>
         <Item
@@ -130,6 +130,16 @@ export default function ItemList(){
         name={item10.name}
         quantity={item10.quantity}
         category={item10.category}
+        />
+        <Item
+        name={item11.name}
+        quantity={item11.quantity}
+        category={item11.category}
+        />        
+        <Item
+        name={item12.name}
+        quantity={item12.quantity}
+        category={item12.category}
         />
     </main>
     );
