@@ -93,8 +93,7 @@ export default function ItemList(){
                 quantity={item3.quantity}
                 category={item3.category} 
                 />
-        </div>
-        <div className="flex flex-1 flex-col justify-around">
+       
             <Item
                 name={item4.name}
                 quantity={item4.quantity}
@@ -131,8 +130,7 @@ export default function ItemList(){
                 quantity={item9.quantity}
                 category={item9.category} 
                 />
-        </div>
-        <div className="flex flex-1 flex-col justify-around">
+        
             <Item
                 name={item9.name}
                 quantity={item9.quantity}
