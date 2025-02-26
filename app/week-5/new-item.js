@@ -88,7 +88,7 @@ export default function NewItem(){
             <div className="">
                 <div className="border-2 rounded-md border-white mb-3">
                     <label htmlFor="name"></label>
-                    <input type="text" placeholder="Enter Item" value={name} onChange={handleChange} required/>
+                    <input className="text-black" type="text" placeholder="Enter Item" value={name} onChange={handleChange} required/>
                 </div>
 
                 <div className="flex flex-row">
