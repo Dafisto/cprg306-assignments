@@ -20,7 +20,7 @@ export default function NewItem(){
         setIsDecEnabled(!isDecEnabled);
     };
 
-    const increment=()=>{
+    const increment=(event)=>{
         if(quantity==20)
         {
             toggleInc;
@@ -37,9 +37,10 @@ export default function NewItem(){
                 setQuantity(quantity+1);
             }
         }
+        event.preventDefault();
     };
 
-    const decrement=()=>{
+    const decrement=(event)=>{
         if(quantity==1)
         {
             toggleDec;
@@ -56,22 +57,24 @@ export default function NewItem(){
                 setQuantity(quantity-1);
             }
         }
+        event.preventDefault();
     };
 
     const handleChange =(event) => {
-        setName(event.target.value());
+        setName(event.target.value);
     }
 
     const handleSelect =(event) => {
-        setCategory(event.target.value());
+        setCategory(event.target.value);
     }
 
-    const handleSubmit =()=>{
+    const handleSubmit =(event)=>{
         const item ={
             name,
             quantity,
             category,
         };
+        event.preventDefault();
         console.log(item);
         alert(`Name: ${name} Quantity: ${quantity} Category: ${category}`);
         setName(""), setQuantity(1), setCategory("produce");
@@ -80,29 +83,43 @@ export default function NewItem(){
     
 
     return(
-        <div className="flex flex-col justify-center">
-            <form onSubmit={handleSubmit}>
-                <label for="name"></label>
-                <input type="text" placeholder="Enter Item" value={name} onChange={handleChange} />
-                <p className="text-center flex-1 pt-10">{quantity}</p>
-                <button className="font-bold bg-gray-300 border-blue-400 rounded-md flex-1 border-2 text-red-400 ml-60 mr-5 py-3 px-15" onClick={decrement} disabled={!isDecEnabled}>Decrease</button>
-                <button className="font-bold bg-gray-300 border-blue-400 rounded-md flex-1 border-2 text-green-400 mr-60 ml-5 py-3 px-15"onClick={increment} disabled={!isIncEnabled}>Increase</button>
-                <label for="category-select"></label>
-                <select category="" onChange={handleSelect}>
-                    <option value="produce">Produce</option>
-                    <option value="dairy">Dairy</option>
-                    <option value="bakery">Bakery</option>
-                    <option value="meat">Meat</option>
-                    <option value="frozen foods">Frozen Foods</option>
-                    <option value="canned goods">Canned Goods</option>
-                    <option value="dry goods">Dry Goods</option>
-                    <option value="beverages">Beverages</option>
-                    <option value="snacks">Snacks</option>
-                    <option value="household">Household</option>
-                    <option value="other">Other</option>
-                </select>
-                <button type="submit">+</button>
-            </form>
-        </div>
+        <main className="flex justify-center w-full">
+        <form className="border-2 rounded-md bg-gray-800 m-4 p-4 justify-center" onSubmit={handleSubmit}>
+            <div className="">
+                <div className="border-2 rounded-md border-white mb-3">
+                    <label htmlFor="name"></label>
+                    <input type="text" placeholder="Enter Item" value={name} onChange={handleChange} required/>
+                </div>
+
+                <div className="flex flex-row">
+                    <section className="text-black bg-white flex flex-1 mr-2 justify-beetween border-2 rounded-md border-white mb-2 py-1">
+                        <p className="flex-1">{quantity}</p>
+                        <button className="mr-1 px-1 font-bold bg-gray-300 border-blue-400 rounded-md text-red-400" onClick={decrement} disabled={!isDecEnabled}>-</button>
+                        <button className="mr-1 px-1 font-bold bg-gray-300 border-blue-400 rounded-md text-green-400"onClick={increment} disabled={!isIncEnabled}>+</button>
+                    </section>
+                    <section className="flex-1">
+                        <label htmlFor="category-select"></label>
+                            <select className="rounded-md py-2 text-green-400" category="" onChange={handleSelect}>
+                                <option value="produce">Produce</option>
+                                <option value="dairy">Dairy</option>
+                                <option value="bakery">Bakery</option>
+                                <option value="meat">Meat</option>
+                                <option value="frozen foods">Frozen Foods</option>
+                                <option value="canned goods">Canned Goods</option>
+                                <option value="dry goods">Dry Goods</option>
+                                <option value="beverages">Beverages</option>
+                                <option value="snacks">Snacks</option>
+                                <option value="household">Household</option>
+                                <option value="other">Other</option>
+                            </select>
+                    </section>
+                </div>
+
+                <div className="flex justify-center">
+                    <button className="border-2 rounded-md bg-blue-400 px-10 py-2" type="submit">+</button>
+                </div>
+            </div>
+        </form>
+        </main>
     )
 }
