@@ -92,7 +92,7 @@ export default function NewItem(){
                 </div>
 
                 <div className="flex flex-row">
-                    <section className="text-black bg-white flex flex-1 mr-2 justify-beetween border-2 rounded-md border-white mb-2 py-1">
+                    <section className="text-black bg-white flex flex-1 mr-2 justify-between border-2 rounded-md border-white mb-2 py-1">
                         <p className="flex-1">{quantity}</p>
                         <button className="mr-1 px-1 font-bold bg-gray-300 border-blue-400 rounded-md text-red-400" onClick={decrement} disabled={!isDecEnabled}>-</button>
                         <button className="mr-1 px-1 font-bold bg-gray-300 border-blue-400 rounded-md text-green-400"onClick={increment} disabled={!isIncEnabled}>+</button>
