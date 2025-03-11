@@ -1,8 +1,9 @@
 "use client"
 
-import { useState } from 'react';
+import { Baloo_Bhai_2 } from "next/font/google/index.js";
 import Item from "./item.js";
 import items from "./items.json";
+import { useState } from 'react';
 
 export default function ItemList(){    
 
@@ -10,7 +11,7 @@ export default function ItemList(){
 
     const sortByElementName = () =>
     {
-        setSortBy("name");
+        setSortBy("name");        
     }
 
     const sortByElementCategory = () =>
