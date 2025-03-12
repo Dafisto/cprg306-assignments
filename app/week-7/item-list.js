@@ -1,23 +1,20 @@
 "use client"
 
-import { Baloo_Bhai_2 } from "next/font/google/index.js";
 import Item from "./item.js";
-import items from "./items.json";
 import { useState } from 'react';
 
-export default function ItemList(){    
+export default function ItemList( {items} ){
 
     const [sortBy, setSortBy] = useState("name")
 
     const sortByElementName = () =>
     {
-        setSortBy("name");        
+        setSortBy("name");
     }
 
     const sortByElementCategory = () =>
     {
-        setSortBy("category")   
-        debugger     
+        setSortBy("category")
     }
 
     const displayByElement = [...items].sort((a,b) =>
@@ -47,7 +44,6 @@ export default function ItemList(){
             <label htmlFor="sort">Sort by:</label>
             <button onClick={() => sortByElementName()}>Name</button>
             <button onClick={() => sortByElementCategory()}>Category</button>
-            <button>Grouped Category</button>
     <div className="">
         <ul>
             {displayByElement.map((item) => (

@@ -2,14 +2,12 @@
 
 import { useState } from 'react';
 
-export default function NewItem(){
-
+export default function NewItem( {onAddItem} ){
     const [name, setName] = useState("");
-
+    
     const [quantity, setQuantity] = useState(1);
     const [isIncEnabled, setIsIncEnabled] = useState(true);
     const [isDecEnabled, setIsDecEnabled] = useState(true);
-    
     const [category, setCategory] = useState("Produce");
     
     const toggleInc=()=>{
@@ -62,26 +60,40 @@ export default function NewItem(){
 
     const handleChange =(event) => {
         setName(event.target.value);
-    }
+    };
 
     const handleSelect =(event) => {
         setCategory(event.target.value);
-    }
+    };
 
-    const handleSubmit =(event)=>{
-        const item ={
-            name,
-            quantity,
-            category,
-        };
+    const randomIDGenerator = () => {
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let result ='';
+            const charsLength = chars.length;
+            for(let i = 0; i < 18; i++){
+                result +=chars.charAt(Math.floor(Math.random()* charsLength));
+            }
+
+            return result;
+
+    };
+
+    const handleSubmit =(event) =>{
         event.preventDefault();
+        const item ={
+            id: randomIDGenerator(),
+            name: name,
+            quantity: quantity,
+            category: category,
+        };        
         console.log(item);
-        alert(`Name: ${name} Quantity: ${quantity} Category: ${category}`);
-        setName(""), setQuantity(1), setCategory("produce");
+        onAddItem(item);
+        setName(""), setQuantity(1);
+        event.target.reset();
     };
 
     
-
+    
     return(
         <main className="flex justify-center w-full">
         <form className="border-2 rounded-md bg-gray-800 m-4 p-4 justify-center" onSubmit={handleSubmit}>
@@ -114,10 +126,7 @@ export default function NewItem(){
                             </select>
                     </section>
                 </div>
-
-                <div className="flex justify-center">
-                    <button className="border-2 rounded-md bg-blue-400 px-10 py-2" type="submit">+</button>
-                </div>
+                <button type="submit">+</button>
             </div>
         </form>
         </main>
