@@ -47,12 +47,10 @@ export default function ItemList(){
             <button onClick={() => sortByElementName()}>Name</button>
             <button onClick={() => sortByElementCategory()}>Category</button>
             <button>Grouped Category</button>
-    <div className="">
-        <ul>
-            {displayByElement.map((item) => (
-                <Item key={item.id}{...item}/>
-            ))}
-        </ul>
+    <div className="">        
+        {displayByElement.map((item) => (
+            <Item key={item.id}{...item}/>
+        ))}        
     </div>
     </main>
     );

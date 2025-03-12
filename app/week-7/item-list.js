@@ -1,9 +1,9 @@
 "use client"
 
 import Item from "./item.js";
-import { useState } from 'react';
+import React, { useState } from "react";
 
-export default function ItemList( {items} ){
+export default function ItemList({ items }) {
 
     const [sortBy, setSortBy] = useState("name")
 
@@ -40,17 +40,17 @@ export default function ItemList( {items} ){
     })
 
     return (
-        <main>
-            <label htmlFor="sort">Sort by:</label>
-            <button onClick={() => sortByElementName()}>Name</button>
-            <button onClick={() => sortByElementCategory()}>Category</button>
-    <div className="">
-        <ul>
-            {displayByElement.map((item) => (
-                <Item key={item.id}{...item}/>
-            ))}
-        </ul>
-    </div>
+    <main>
+        <label htmlFor="sort">Sort by:</label>
+        <button onClick={() => sortByElementName()}>Name</button>
+        <button onClick={() => sortByElementCategory()}>Category</button>
+        <div className="">
+            <ul>
+                {displayByElement.map((item) => (
+                    <Item key={`display-item-${item.id}`}{...item}/>
+                ))}
+            </ul>
+        </div>
     </main>
     );
 }

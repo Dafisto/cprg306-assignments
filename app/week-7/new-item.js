@@ -4,7 +4,6 @@ import { useState } from 'react';
 
 export default function NewItem( {onAddItem} ){
     const [name, setName] = useState("");
-    
     const [quantity, setQuantity] = useState(1);
     const [isIncEnabled, setIsIncEnabled] = useState(true);
     const [isDecEnabled, setIsDecEnabled] = useState(true);
@@ -66,26 +65,23 @@ export default function NewItem( {onAddItem} ){
         setCategory(event.target.value);
     };
 
-    const randomIDGenerator = () => {
-        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-            let result ='';
-            const charsLength = chars.length;
-            for(let i = 0; i < 18; i++){
-                result +=chars.charAt(Math.floor(Math.random()* charsLength));
-            }
-
-            return result;
-
-    };
-
     const handleSubmit =(event) =>{
         event.preventDefault();
+        const randomIDGenerator = (length) => {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let result = '';
+            const charsLength = chars.length;
+            for(let i = 0; i < length; i++){
+                result +=chars.charAt(Math.floor(Math.random()* charsLength));
+            }
+            return result;
+        }
         const item ={
-            id: randomIDGenerator(),
+            id: randomIDGenerator(16),
             name: name,
             quantity: quantity,
             category: category,
-        };        
+        };
         console.log(item);
         onAddItem(item);
         setName(""), setQuantity(1);

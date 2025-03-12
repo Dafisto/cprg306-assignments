@@ -1,6 +1,5 @@
 
 export default function Item(props){
-    
 
 return(
     <ol className="flex-1 bg-slate-800 border-3 rounded-md border-blue-800 px-4 py-5 mx-5 my-7">
