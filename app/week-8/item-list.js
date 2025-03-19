@@ -40,7 +40,7 @@ export default function ItemList({ items, onItemSelect }) {
     });
 
     return (
-    <div className="mx-10 flex flex-col border-2 w-1/2">
+    <div className="mx-10 flex flex-col border-4 rounded-md mb-10 w-[500px]">
         <div className="flex border-4">
             <label className="flex-0 border-2" htmlFor="sort">Sort by:</label>
             <div className="flex flex-1">

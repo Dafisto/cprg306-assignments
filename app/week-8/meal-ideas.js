@@ -32,8 +32,8 @@ export default function MealIdeas( {ingredient} ) {
     },[ingredient]);
     
     return(
-    <div className="flex border-4">
-        <h2 className="px-10 py-10 text-xl font-bold text-white-300">Meal Ideas</h2>
+    <div className="flex border-4 rounded-md mb-10 w-[500px]">
+        <h2 className="px-10 py-10 text-3xl font-bold text-white-300">Meal Ideas:</h2>
         <ul>
             {meals.map((meal) => (
                 <li key={meal.idMeal}>

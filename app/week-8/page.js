@@ -29,13 +29,13 @@ export default function Page(){
 
 return(
         <main className="bg-slate-800">
-            <h1 className="mx-10 px-10 py-10 text-5xl font-bold text-white-300 ">Shopping List</h1>
+            <h1 className="mx-10 px-3 py-10 text-5xl font-bold text-white-300 ">Shopping List</h1>
             <div className="flex flex-row">
-                <div className="flex flex-1 flex-col">
+                <div className="flex flex-col">
                     <NewItem onAddItem={handleAddItem} />
                     <ItemList items={items} onItemSelect={handleItemSelect} />
                 </div>
-                <div className="flex flex-1">
+                <div className="flex ">
                     <MealIdeas ingredient={selectedItemName}/>
                 </div>
             </div>

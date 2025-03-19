@@ -91,40 +91,40 @@ export default function NewItem( {onAddItem} ){
     
     
     return(
-        <main className="flex ml-10">
-        <form className="border-2 rounded-md bg-gray-800 mx-4 mb-8 p-4" onSubmit={handleSubmit}>
-            <div className="">
-                <div className="border-2 rounded-md border-white mb-3">
-                    <label htmlFor="name"></label>
-                    <input className="text-black" type="text" placeholder="Enter Item" value={name} onChange={handleChange} required/>
-                </div>
+        <div className="flex ml-10">
+            <form className="w-[500px] border-4 rounded-md bg-gray-800 mb-8 p-4" onSubmit={handleSubmit}>
+                <div className="">
+                    <div className="border-2 rounded-md border-white mb-3">
+                        <label htmlFor="name"></label>
+                        <input className="text-black" type="text" placeholder="Enter Item" value={name} onChange={handleChange} required/>
+                    </div>
 
-                <div className="flex flex-row">
-                    <section className="text-black bg-white flex flex-1 mr-2 justify-between border-2 rounded-md border-white mb-2 py-1">
-                        <p className="flex-1">{quantity}</p>
-                        <button className="mr-1 px-1 font-bold bg-gray-300 border-blue-400 rounded-md text-red-400" onClick={decrement} disabled={!isDecEnabled}>-</button>
-                        <button className="mr-1 px-1 font-bold bg-gray-300 border-blue-400 rounded-md text-green-400"onClick={increment} disabled={!isIncEnabled}>+</button>
-                    </section>
-                    <section className="flex-1">
-                        <label htmlFor="category-select"></label>
-                            <select className="rounded-md py-2 text-green-400" category="" onChange={handleSelect}>
-                                <option value="produce">Produce</option>
-                                <option value="dairy">Dairy</option>
-                                <option value="bakery">Bakery</option>
-                                <option value="meat">Meat</option>
-                                <option value="frozen foods">Frozen Foods</option>
-                                <option value="canned goods">Canned Goods</option>
-                                <option value="dry goods">Dry Goods</option>
-                                <option value="beverages">Beverages</option>
-                                <option value="snacks">Snacks</option>
-                                <option value="household">Household</option>
-                                <option value="other">Other</option>
-                            </select>
-                    </section>
+                    <div className="flex flex-row">
+                        <section className="text-black bg-white flex flex-1 mr-2 justify-between border-2 rounded-md border-white mb-2 py-1">
+                            <p className="flex-1">{quantity}</p>
+                            <button className="mr-1 px-1 font-bold bg-gray-300 border-blue-400 rounded-md text-red-400" onClick={decrement} disabled={!isDecEnabled}>-</button>
+                            <button className="mr-1 px-1 font-bold bg-gray-300 border-blue-400 rounded-md text-green-400"onClick={increment} disabled={!isIncEnabled}>+</button>
+                        </section>
+                        <section className="flex-1">
+                            <label htmlFor="category-select"></label>
+                                <select className="rounded-md py-2 text-green-400" category="" onChange={handleSelect}>
+                                    <option value="produce">Produce</option>
+                                    <option value="dairy">Dairy</option>
+                                    <option value="bakery">Bakery</option>
+                                    <option value="meat">Meat</option>
+                                    <option value="frozen foods">Frozen Foods</option>
+                                    <option value="canned goods">Canned Goods</option>
+                                    <option value="dry goods">Dry Goods</option>
+                                    <option value="beverages">Beverages</option>
+                                    <option value="snacks">Snacks</option>
+                                    <option value="household">Household</option>
+                                    <option value="other">Other</option>
+                                </select>
+                        </section>
+                    </div>
+                    <button type="submit">+</button>
                 </div>
-                <button type="submit">+</button>
-            </div>
-        </form>
-        </main>
+            </form>
+        </div>
     )
 }
