@@ -29,10 +29,16 @@ export default function Page(){
 
 return(
         <main className="bg-gray-400">
-            <h1 className="border-4 border-blue-800 px-10 mx-2 py-10 my-4 text-xl font-bold text-center text-white-300 bg-slate-800">Shopping List</h1>
+            <h1 className="border-4 border-blue-800 px-10 py-10 text-xl font-bold text-center text-white-300 bg-slate-800">Shopping List</h1>
             <NewItem onAddItem={handleAddItem} />
-            <ItemList items={items} onItemSelect={handleItemSelect} />
-            <MealIdeas ingredient={selectedItemName}/>
+            <div className="flex">
+                <div className="flex-1 m-5 border-2 ">
+                    <ItemList items={items} onItemSelect={handleItemSelect} />
+                </div>
+                <div className="flex-1 border-2 my-5">
+                    <MealIdeas ingredient={selectedItemName}/>
+                </div>
+            </div>
         </main>
     );
 }
