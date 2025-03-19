@@ -28,7 +28,7 @@ export default function Page(){
     }
 
 return(
-        <main className="bg-slate-800">
+        <main className="bg-black">
             <h1 className="mx-10 px-3 py-10 text-5xl font-bold text-white-300 ">Shopping List</h1>
             <div className="flex flex-row">
                 <div className="flex flex-col">

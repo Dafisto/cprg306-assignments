@@ -40,9 +40,9 @@ export default function ItemList({ items, onItemSelect }) {
     });
 
     return (
-    <div className="mx-10 flex flex-col border-4 rounded-md mb-10 w-[500px]">
-        <div className="flex border-4">
-            <label className="flex-0 border-2" htmlFor="sort">Sort by:</label>
+    <div className="mx-10 flex flex-col border-4 border-blue-800 bg-gray-600 rounded-md mb-10 w-[500px]">
+        <div className="flex bg-slate-800 py-5">
+            <label className="flex-0 pl-5" htmlFor="sort">Sort by:</label>
             <div className="flex flex-1">
                 <button className="flex-1" onClick={sortByElementName}>Name</button>
                 <button className="flex-1" onClick={sortByElementCategory}>Category</button>

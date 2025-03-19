@@ -92,7 +92,7 @@ export default function NewItem( {onAddItem} ){
     
     return(
         <div className="flex ml-10">
-            <form className="w-[500px] border-4 rounded-md bg-gray-800 mb-8 p-4" onSubmit={handleSubmit}>
+            <form className="bg-gray-600 w-[500px] border-4 border-blue-800 rounded-md bg-gray-800 mb-8 p-4" onSubmit={handleSubmit}>
                 <div className="">
                     <div className="border-2 rounded-md border-white mb-3">
                         <label htmlFor="name"></label>

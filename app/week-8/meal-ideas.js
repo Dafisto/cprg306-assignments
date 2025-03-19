@@ -32,21 +32,23 @@ export default function MealIdeas( {ingredient} ) {
     },[ingredient]);
     
     return(
-    <div className="flex flex-col border-4 rounded-md mb-10 w-[500px]">
+    <div className="flex flex-col border-4 border-blue-800 bg-gray-600 rounded-md mb-10 w-[500px]">
         <div>
-            <h2 className="px-10 py-10 text-3xl font-bold text-white-300">Meal Ideas:</h2>
-        </div>        
-        <ul className="flex w-1/4">
-            {meals.map((meal) => (
-                <li className="" key={meal.idMeal}>
-                    <img className="h-[125px] w-[125px]"
-                    src={meal.strMealThumb}
-                    alt={meal.strMeal}
-                    />
-                    <p>{meal.strMeal}</p>
-                </li>
-            ))}
-        </ul>        
+            <h2 className="px-10 py-10 text-3xl font-bold text-white-300 bg-slate-800">Meal Ideas:</h2>
+        </div>
+        <div>
+            <ul className="flex flex-wrap">
+                {meals.map((meal) => (
+                    <li className="flex-1 mx-2 mb-2" key={`display-meal${meal.idMeal}`}>
+                        <img className="h-[125px] w-[125px] rounded-md"
+                        src={meal.strMealThumb}
+                        alt={meal.strMeal}
+                        />
+                        <p>{meal.strMeal}</p>
+                    </li>
+                ))}
+            </ul>
+        </div>
     </div>
     );
 }
