@@ -44,8 +44,8 @@ export default function ItemList({ items, onItemSelect }) {
         <div className="flex bg-slate-800 py-5">
             <label className="flex-0 pl-5" htmlFor="sort">Sort by:</label>
             <div className="flex flex-1">
-                <button className="flex-1 w-[60px] bg-orange-400 font-bold ml-5 mr-2" onClick={sortByElementName}>Name</button>
-                <button className="flex-1 w-[60px] bg-orange-400 mr-5 font-bold ml-2" onClick={sortByElementCategory}>Category</button>
+                <button className={`flex-1 w-[60px] font-bold ml-5 mr-2 ${sortBy === "name" ? "bg-orange-800" : "bg-orange-400"}`} onClick={sortByElementName}>Name</button>
+                <button className={`flex-1 w-[60px] mr-5 font-bold ml-2 ${sortBy === "category" ? "bg-orange-800" : "bg-orange-400"}`} onClick={sortByElementCategory}>Category</button>
             </div>
         </div>
         <ul className="flex flex-wrap">
