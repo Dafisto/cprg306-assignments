@@ -91,8 +91,8 @@ export default function NewItem( {onAddItem} ){
     
     
     return(
-        <main className="flex justify-center w-full">
-        <form className="border-2 rounded-md bg-gray-800 m-4 p-4 justify-center" onSubmit={handleSubmit}>
+        <main className="flex ml-10">
+        <form className="border-2 rounded-md bg-gray-800 mx-4 mb-8 p-4" onSubmit={handleSubmit}>
             <div className="">
                 <div className="border-2 rounded-md border-white mb-3">
                     <label htmlFor="name"></label>

@@ -40,13 +40,15 @@ export default function ItemList({ items, onItemSelect }) {
     });
 
     return (
-    <main>
-        <div className="flex flex-wrap border-4">
-            <label className="flex-1 border-2" htmlFor="sort">Sort by:</label>
-            <button className="flex-1" onClick={sortByElementName}>Name</button>
-            <button className="flex-1" onClick={sortByElementCategory}>Category</button>
+    <div className="mx-10 flex flex-col border-2 w-1/2">
+        <div className="flex border-4">
+            <label className="flex-0 border-2" htmlFor="sort">Sort by:</label>
+            <div className="flex flex-1">
+                <button className="flex-1" onClick={sortByElementName}>Name</button>
+                <button className="flex-1" onClick={sortByElementCategory}>Category</button>
+            </div>
         </div>
-        <ul className="flex">
+        <ul className="flex flex-wrap">
             {displayByElement.map((item) => (
                     <Item 
                     key={`display-item-${item.id}`}
@@ -55,6 +57,6 @@ export default function ItemList({ items, onItemSelect }) {
                 />
             ))}
         </ul>
-    </main>
+    </div>
     );
 }
