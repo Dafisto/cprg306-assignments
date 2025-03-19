@@ -39,7 +39,7 @@ export default function MealIdeas( {ingredient} ) {
         <div>
             <ul className="flex flex-wrap">
                 {meals.map((meal) => (
-                    <li className="flex-1 mx-2 mb-2" key={`display-meal${meal.idMeal}`}>
+                    <li className="p-5 flex-1" key={`display-meal${meal.idMeal}`}>
                         <img className="h-[125px] w-[125px] rounded-md"
                         src={meal.strMealThumb}
                         alt={meal.strMeal}
