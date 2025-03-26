@@ -1,5 +1,6 @@
 "use client";
-import { useContext, creatContext, useState, useEffect } from "react";
+
+import { useContext, createContext, useState, useEffect } from "react";
 import {
     signInWithPopup,
     signOut,
@@ -30,7 +31,7 @@ export const AuthContextProvider = ({ children }) => {
     }, [user]);
 
     return (
-        <AuthContext.Provider value={{ user, gitHubSignIn, firebaseSigntOut }}>
+        <AuthContext.Provider value={{ user, gitHubSignIn, firebaseSignOut }}>
             {children}
         </AuthContext.Provider>
     );
