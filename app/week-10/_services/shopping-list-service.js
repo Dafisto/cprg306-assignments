@@ -37,4 +37,4 @@ import { collection, getDocs, addDoc, query } from "firebase/firestore";
     
    }
 
-   export { getItems, addItem};
+   export { getItems, addItem };

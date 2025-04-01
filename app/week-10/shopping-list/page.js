@@ -3,8 +3,7 @@ import ItemList from "./item-list.js";
 import NewItem from "./new-item.js";
 import React, { useState, useEffect } from "react";
 import MealIdeas from "./meal-ideas.js";
-import getItems from "../_services/shopping-list-service.js";
-import addItem from "../_services/shopping-list-service.js";
+import { addItem, getItems } from "../_services/shopping-list-service.js";
 import { useUserAuth } from "../_utils/auth-context.js";
 
 
@@ -17,7 +16,7 @@ export default function Page(){
     async function loadItems() {
         if(user) {
             try {
-                const userItems = await getItems(user.id);
+                const userItems = await getItems(user.uid);
                 setItems(userItems);
             } catch (error) {
                 console.error('Error retrieving list: ', error);
@@ -29,7 +28,7 @@ export default function Page(){
     {
         if(user) {
             try {
-                const newItemID = await addItem(user.id, newItem);
+                const newItemID = await addItem(user.uid, newItem);
                 setItems((prevItems) => [...prevItems, {...newItem, id: newItemID}]);
             } catch (error) {
                 console.error('Error on add: ', error);
